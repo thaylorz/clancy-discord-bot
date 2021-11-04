@@ -6,11 +6,15 @@ export default class PingCommand extends Command {
     public constructor(client: Client) {
         super(client, {
             name: 'ping',
-            description: 'Mostra a latencia do Clancy.',
+            description: 'Mostra a latência do Clancy.',
         });
     }
 
     run = (interaction: CommandInteraction) => {
-        interaction.reply('a');
+        interaction.reply({
+            content: `O meu ping é ${this.client.ws.ping}ms.`,
+            ephemeral: true,
+            fetchReply: true,
+        });
     };
 }

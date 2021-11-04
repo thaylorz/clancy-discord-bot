@@ -13,15 +13,7 @@ dotenv.config();
 export class DiscordClient extends Client {
     constructor() {
         const options: ClientOptions = {
-            intents: [
-                'GUILDS',
-                'GUILD_MEMBERS',
-                'GUILD_MESSAGES',
-                'GUILD_MESSAGE_REACTIONS',
-                'GUILD_INVITES',
-                'GUILD_VOICE_STATES',
-                'GUILD_PRESENCES',
-            ],
+            intents: 32767,
         };
 
         super(options);

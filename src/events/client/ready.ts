@@ -1,4 +1,5 @@
-import { DiscordClient } from 'src/structures/Client';
+import SendDracoPrice from '../../jobs/SendDracoPrice';
+import { DiscordClient } from '../../structures/Client';
 
 import { Event } from '../../structures/Event';
 
@@ -13,5 +14,6 @@ export default class Ready extends Event {
     run = () => {
         console.info(`Bot ${this.client.user.username} is ready.`);
         this.client.registrySlashCommands();
+        SendDracoPrice.start();
     };
 }
