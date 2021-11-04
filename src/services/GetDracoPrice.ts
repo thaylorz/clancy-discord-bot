@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { IResponseUsdBrl } from './GetUSDToBRLPrice';
 
 export interface IResponseDracoPrice {
     CreatedDT: string;
@@ -25,7 +24,7 @@ const fetchApi = () => {
         .then(({ data }) => data.Data);
 };
 
-export default async function GetDracoPrice(usdData: IResponseUsdBrl) {
+export default async function GetDracoPrice(usdData) {
     const data: IResponseDracoPrice = await fetchApi();
 
     data.BRLDracoRate = parseFloat(data.USDDracoRate) * parseFloat(usdData.bid);

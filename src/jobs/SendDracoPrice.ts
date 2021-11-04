@@ -2,9 +2,9 @@ import { MessageEmbed } from 'discord.js';
 import cron from 'node-cron';
 
 import { Client } from '../app';
-import GetUsdToBrlPrice from 'src/services/GetUSDToBRLPrice';
-import GetDracoPrice from 'src/services/GetDracoPrice';
-import RandomColor from 'src/util/RandomColor';
+import GetDracoPrice from '../services/GetDracoPrice';
+import GetUsdToBrlPrice from '../services/GetUsdToBrlPrice';
+import RandomColor from '../util/RandomColor';
 
 
 function sendDracoPrice() {
