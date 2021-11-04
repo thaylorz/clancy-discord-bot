@@ -1,5 +1,6 @@
-import { MessageEmbed } from 'discord.js';
 import cron from 'node-cron';
+
+import { MessageEmbed } from 'discord.js';
 
 import { Client } from '../app';
 import GetDracoPrice from '../services/GetDracoPrice';
@@ -8,7 +9,7 @@ import RandomColor from '../util/RandomColor';
 
 
 function sendDracoPrice() {
-    const channel = Client.channels.cache.get('900118600277446709');
+    const channel = Client.channels.cache.get('905946315320610826');
 
     GetUsdToBrlPrice()
         .then((usdData) => GetDracoPrice(usdData))
@@ -39,6 +40,7 @@ function sendDracoPrice() {
                 .setURL('https://www.mir4draco.com');
 
             channel.send({ embeds: [embed] });
+            console.info('Nova atualização de preço enviada.');
         });
 }
 
