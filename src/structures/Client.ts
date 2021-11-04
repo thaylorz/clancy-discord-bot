@@ -5,8 +5,8 @@ import { Client, ClientOptions } from 'discord.js';
 
 import dotenv from 'dotenv';
 
-import { Command } from './Command';
 import { Event } from './Event';
+import { Command } from './Command';
 
 dotenv.config();
 
@@ -34,7 +34,7 @@ export class DiscordClient extends Client {
         this.login(process.env.DISCORD_BOT_TOKEN);
     }
 
-    protected commands: Array<Command>;
+    public commands: Array<any>;
 
     public getCommands() {
         return this.commands;
@@ -42,6 +42,10 @@ export class DiscordClient extends Client {
 
     public setCommand(command: Command) {
         this.commands.push(command);
+    }
+
+    public registrySlashCommands() {
+        this.guilds.cache.get('900118599774142514').commands.set(this.commands);
     }
 
     public loadCommands() {
@@ -53,6 +57,7 @@ export class DiscordClient extends Client {
 
             for (const command of commands) {
                 const commandClass = require(join(process.cwd(), `${path}/${category}/${command}`));
+                // eslint-disable-next-line new-cap
                 const cmd: Command = new commandClass.default(this);
 
                 this.setCommand(cmd);
@@ -71,6 +76,7 @@ export class DiscordClient extends Client {
 
             for (const event of events) {
                 const eventClass = require(join(process.cwd(), `${path}/${category}/${event}`));
+                // eslint-disable-next-line new-cap
                 const evt: Event = new eventClass.default(this);
 
                 this.on(evt.name, evt.run);

@@ -1,3 +1,4 @@
-import { DiscordClient } from './structures/Cliente';
+import { DiscordClient } from './structures/Client';
 
-const discordClient = new DiscordClient();
+// eslint-disable-next-line no-unused-vars
+export const Client = new DiscordClient();

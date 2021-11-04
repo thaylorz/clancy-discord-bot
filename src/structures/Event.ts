@@ -1,4 +1,4 @@
-import { Client } from "discord.js";
+import { DiscordClient } from './Client';
 
 export interface EventOptions {
     name: string | null;
@@ -6,14 +6,15 @@ export interface EventOptions {
 }
 
 export class Event {
-    constructor(client: Client, options: EventOptions) {
+    constructor(client: DiscordClient, options: EventOptions) {
         this.client = client;
         this.name = options.name;
         this.description = options.description;
     }
 
-    public client: Client;
+    public client: DiscordClient;
     public name: string | null;
     public description: string | null;
-    public run(): void {}
+    // eslint-disable-next-line no-empty-function
+    public run(any: any): any { }
 }
