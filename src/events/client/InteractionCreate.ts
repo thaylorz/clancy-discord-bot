@@ -1,5 +1,5 @@
 import { Interaction } from 'discord.js';
-import { DiscordClient } from 'src/structures/Client';
+import { DiscordClient } from '../../structures/Client';
 
 import { Event } from '../../structures/Event';
 
