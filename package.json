@@ -1,8 +1,15 @@
 {
   "name": "clancy-discord-bot",
   "version": "1.0.0",
-  "description": "",
-  "main": "",
+  "description": "Simple bot for Discord",
+  "private": false,
+  "main": "dist/app.js",
+  "repository": {
+    "url": "https://github.com/thaylorz/clancy-discord-bot"
+  },
+  "bugs": {
+    "url": "https://github.com/thaylorz/clancy-discord-bot/issues"
+  },
   "engines": {
     "node": "17.0.0"
   },
@@ -12,8 +19,11 @@
     "heroku-postbuild": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
     "start": "node dist/app.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "Discord",
+    "Bot"
+  ],
+  "author": "Thaylor dos Santos",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.16.0",
