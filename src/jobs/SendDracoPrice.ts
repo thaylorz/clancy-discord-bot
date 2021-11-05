@@ -22,11 +22,11 @@ function sendDracoPrice() {
                     inline: true,
                 }, {
                     name: 'WEMIX/DRACO',
-                    value: `${parseFloat(dracoData.DracoPriceWemix).toLocaleString('pt-br', { style: 'currency', currency: 'USD', minimumFractionDigits: 4 })}\n${dracoData.USDWemixVariation.toLocaleString('pt-br', { minimumFractionDigits: 2 })}`,
+                    value: `${parseFloat(dracoData.DracoPriceWemix).toLocaleString('pt-br', { style: 'currency', currency: 'USD', minimumFractionDigits: 4 })}\n${dracoData.USDWemixVariation.toLocaleString('pt-br', { minimumFractionDigits: 2 })}%`,
                     inline: true,
                 }, {
                     name: 'BRL/DRACO',
-                    value: `${dracoData.BRLDracoRate.toLocaleString('pt-br', { style: 'currency', currency: 'BRL', minimumFractionDigits: 4 })}\n${dracoData.BRLDracoVariation.toLocaleString('pt-br', { minimumFractionDigits: 2 })}`,
+                    value: `${dracoData.BRLDracoRate.toLocaleString('pt-br', { style: 'currency', currency: 'BRL', minimumFractionDigits: 4 })}\n${dracoData.BRLDracoVariation.toLocaleString('pt-br', { minimumFractionDigits: 2 })}%`,
                     inline: true,
                 })
                 .setImage('https://file.mir4global.com/draco/img/mir4draco.png')
