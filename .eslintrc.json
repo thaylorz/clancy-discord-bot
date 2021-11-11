@@ -59,6 +59,6 @@
 		"max-len": ["error", { "code": 999, "tabWidth": 4 }],
 		"linebreak-style": 0,
 		"no-tabs": 0,
-		"indent": ["error", 4]
+		"indent": ["error", 2]
     }
 }

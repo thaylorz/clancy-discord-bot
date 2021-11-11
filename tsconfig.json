@@ -7,7 +7,7 @@
       "emitDecoratorMetadata": true,
       "removeComments": true,                       
       "module": "CommonJS",                           
-      "outDir": "./dist",                             
+      "outDir": "./build",                             
       "rootDir": "./src",
       "moduleResolution": "node",
       "esModuleInterop": true,
@@ -20,7 +20,7 @@
   },
   "exclude":[
     "./node_modules",
-    "./dist/*",
+    "./build/*",
     "*.js"
   ]
 }
